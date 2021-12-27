@@ -1,7 +1,7 @@
-import EventPractice from "./EventPractice";
+import CurrentModule from "../src/Ch05-ref/ValidationSample";
 
 const App = () => {
-    return <EventPractice />;
+    return <CurrentModule />;
 }
 
 export default App;
