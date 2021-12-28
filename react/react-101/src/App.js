@@ -1,4 +1,4 @@
-import CurrentModule from "../src/Ch05-ref/ValidationSample";
+import CurrentModule from "../src/Ch05-ref/ScrollContainer";
 
 const App = () => {
     return <CurrentModule />;
