@@ -1,4 +1,4 @@
-import CurrentModule from "../src/Ch06-iterations/IterationSample";
+import CurrentModule from "../src/Ch07-ComponentLifecycle/LifeCycleContainer";
 
 const App = () => {
     return <CurrentModule />;
