@@ -63,6 +63,8 @@ class LifeCycleSample extends Component {
         
         return(
             <div>
+                {/*intentionally invoking error by calling missing property*/}
+                {this.props.missing.value}
                 <h1 style={style} ref={ref => this.myRef = ref}>
                     {this.state.number}
                 </h1>
