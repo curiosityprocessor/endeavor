@@ -1,4 +1,4 @@
-import CurrentModule from "../src/Ch07-ComponentLifecycle/LifeCycleContainer";
+import CurrentModule from "../src/Ch08-Hooks/Info";
 
 const App = () => {
     return <CurrentModule />;
