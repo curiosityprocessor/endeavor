@@ -1,4 +1,4 @@
-import CurrentModule from "../src/Ch08-Hooks/Info";
+import CurrentModule from "../src/Ch08-Hooks/InfoContainer";
 
 const App = () => {
     return <CurrentModule />;
