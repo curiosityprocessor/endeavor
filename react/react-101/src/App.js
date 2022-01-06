@@ -1,4 +1,4 @@
-import CurrentModule from "../src/Ch0";
+import CurrentModule from "../src/Ch09-ComponentStyling/SassComponent";
 
 const App = () => {
     return <CurrentModule />;
