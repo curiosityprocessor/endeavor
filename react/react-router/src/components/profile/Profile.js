@@ -13,6 +13,7 @@ const data = {
 
 const Profile = () => {
     const {username} = useParams();
+    console.log(username);
     const profile = data[username];
     if(!profile) {
         return <div>user does not exist</div>

@@ -1,7 +1,8 @@
 import { Link, Route, Routes } from 'react-router-dom';
 import About from './components/common/About';
+import HistoryFunctionSample from './components/common/HistoryFunctionSample';
 import Home from './components/common/Home';
-import Profile from './components/profile/Profile';
+import Profiles from './components/profile/Profiles';
 
 /*
     since react-router-dom v6
@@ -19,16 +20,17 @@ const App = () => {
                     <Link to="/about">About</Link>
                 </li>
                 <li>
-                    <Link to="/profile/curiosity">curiosity profile</Link>
+                    <Link to="/profiles">Profile</Link>
                 </li>
                 <li>
-                    <Link to="/profile/cyjoo">cyjoo profile</Link>
+                    <Link to="/history">History</Link>
                 </li>
             </ul>
             <Routes>
                 <Route path = "/" element={<Home/>} />
                 <Route path = "/about" element={<About/>} />
-                <Route path = "/profile/:username" element={<Profile/>} />
+                <Route path = "/profiles/*" element={<Profiles/>} />
+                <Route path = "/history" element={<HistoryFunctionSample/>} />
             </Routes>
         </div>
     )
