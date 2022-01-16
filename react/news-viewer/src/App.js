@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import axios from 'axios';
+import * as Constants from './constants/api-constants';
 
 function App() {
+  const [data, setData] = useState(null);
+  const onClick = async () => {
+      try {
+          const response = await axios.get(Constants.NEWS_URL_TOP);
+          setData(response.data);
+      } catch (e) {
+          console.log(e);
+      }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <div>
+            <button onClick={onClick}>read</button>
+        </div>
+        {data && <textarea cols={100} rows={20} value={JSON.stringify(data, null, 2)} readOnly={true} />}
     </div>
-  );
+  )
 }
 
 export default App;
