@@ -1,5 +1,8 @@
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import NewsItem from './NewsItem';
+import axios from 'axios';
+import * as Constants from '../constants/api-constants';
 
 const NewsListBlock = styled.div`
     box-sizing: border-box;
@@ -14,20 +17,36 @@ const NewsListBlock = styled.div`
     };
 `;
 
-const mockArticle = {
-    title: 'news title',
-    desription: 'short description of the article',
-    url: 'www.google.com',
-    urlToImage: 'https://via.placeholder.com/160'
-}
-
 const NewsList = () => {
+    const [articles, setArticles] = useState(null);
+    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true);
+            try {
+                const response = await axios.get(Constants.NEWS_URL_TOP);
+                setArticles(response.data.articles);
+            } catch (e) {
+                console.log(e);
+            }
+            setLoading(false);
+        };
+        fetchData();
+    }, []);
+
+    if(loading) {
+        return <NewsListBlock>loading</NewsListBlock>;
+    }
+
+    if(!articles) {
+        return null;
+    }
+
     return (
         <NewsListBlock>
-            <NewsItem article={mockArticle} />
-            <NewsItem article={mockArticle} />
-            <NewsItem article={mockArticle} />
-            <NewsItem article={mockArticle} />
+            {articles.map(article => (
+                <NewsItem key={article.url} article={article} />
+            ))}
         </NewsListBlock>
     )
 };
