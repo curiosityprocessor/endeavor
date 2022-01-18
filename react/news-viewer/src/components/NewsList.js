@@ -17,14 +17,15 @@ const NewsListBlock = styled.div`
     };
 `;
 
-const NewsList = () => {
+const NewsList = ({category}) => {
     const [articles, setArticles] = useState(null);
     const [loading, setLoading] = useState(false);
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(Constants.NEWS_URL_TOP);
+                const query = category === Constants.NEWS_CTGR_ALL ? '' : `&category=${category}`;
+                const response = await axios.get(Constants.NEWS_URL_TOP + query);
                 setArticles(response.data.articles);
             } catch (e) {
                 console.log(e);
@@ -32,7 +33,7 @@ const NewsList = () => {
             setLoading(false);
         };
         fetchData();
-    }, []);
+    }, [category]);
 
     if(loading) {
         return <NewsListBlock>loading</NewsListBlock>;
