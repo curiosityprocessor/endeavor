@@ -77,6 +77,7 @@ const Categories = () =>  {
                 <CategoryBlock 
                     key={ctgr.name}
                     to={ctgr.name === Constants.NEWS_CTGR_ALL ? '/' : `/${ctgr.name}`}
+                    className={isActive => "nav-link" + (isActive ? "active" : "")}
                 >
                     {ctgr.text}
                 </CategoryBlock>

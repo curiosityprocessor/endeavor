@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import NewsItem from './NewsItem';
 import axios from 'axios';
 import * as Constants from '../constants/api-constants';
-import usePromise from '../lib/usePromise';
 
 const NewsListBlock = styled.div`
     box-sizing: border-box;
@@ -19,24 +18,30 @@ const NewsListBlock = styled.div`
 `;
 
 const NewsList = ({category}) => {
-    const [loading, response, error] = usePromise(() => {
-        const query = category === Constants.NEWS_CTGR_ALL ? '' : `&category=${category}`;
-        return axios.get(Constants.NEWS_URL_TOP + query);
+    const [articles, setArticles] = useState(null);
+    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true);
+            try {
+                const query = category === Constants.NEWS_CTGR_ALL ? '' : `&category=${category}`;
+                const response = await axios.get(Constants.NEWS_URL_TOP + query);
+                setArticles(response.data.articles);
+            } catch (e) {
+                console.log(e);
+            }
+            setLoading(false);
+        };
+        fetchData();
     }, [category]);
 
     if(loading) {
         return <NewsListBlock>loading</NewsListBlock>;
     }
 
-    if(!response) {
+    if(!articles) {
         return null;
     }
-
-    if(!error) {
-        return <NewsListBlock>error!</NewsListBlock>;
-    }
-
-    const { articles } = response.data;
 
     return (
         <NewsListBlock>
