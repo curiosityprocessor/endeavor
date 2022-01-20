@@ -32,7 +32,7 @@ const NewsList = ({category}) => {
         return null;
     }
 
-    if(!error) {
+    if(error) {
         return <NewsListBlock>error!</NewsListBlock>;
     }
 

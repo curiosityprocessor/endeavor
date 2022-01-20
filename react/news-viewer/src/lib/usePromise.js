@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function usePromise(promiseCreator, deps) {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [response, setResponse] = useState(null);
     const [error, setError] = useState(null);
     
