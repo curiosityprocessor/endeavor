@@ -1,0 +1,11 @@
+<svg 
+  class="icon" 
+  width="24" 
+  height="24" 
+  viewBox="0 0 24 24" 
+  preserveAspectRatio="xMidYMid meet">
+    <path 
+      fill="currentColor" 
+      d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z">
+    </path>
+</svg>

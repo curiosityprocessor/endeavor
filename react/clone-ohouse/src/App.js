@@ -1,5 +1,6 @@
 import './App.css';
 import Banners from './components/Banners';
+import Header from './components/Header';
 
 
 const sampleBanners = [
@@ -23,7 +24,7 @@ const sampleBanners = [
 const App = () => {
   return (
     <div>
-      <p>header</p>
+      <Header />
       <p>gnb</p>
       <Banners banners={sampleBanners}/>
       <p>category</p>
