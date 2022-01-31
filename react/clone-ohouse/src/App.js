@@ -1,4 +1,4 @@
-import './App.css';
+import './style/sample.css';
 import Banners from './components/Banners';
 import Header from './components/Header';
 
