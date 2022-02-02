@@ -1,6 +1,7 @@
 import './style/sample.css';
 import Banners from './components/Banners';
 import Header from './components/Header';
+import Gnb from './components/Gnb';
 
 
 const sampleBanners = [
@@ -25,7 +26,7 @@ const App = () => {
   return (
     <div>
       <Header />
-      <p>gnb</p>
+      <Gnb />
       <Banners banners={sampleBanners}/>
       <p>category</p>
       <p>deal of the day</p>
