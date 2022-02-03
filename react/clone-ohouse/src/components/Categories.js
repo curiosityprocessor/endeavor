@@ -1,5 +1,3 @@
-import '../style/categories.css';
-
 const Categories = () => {
     return (
         <nav className="container shortcut">
