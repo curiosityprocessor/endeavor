@@ -28,8 +28,6 @@ const App = () => {
       <Header />
       <Gnb />
       <Contents />
-      <p>deal of the day</p>
-      <p>keyword</p>
     </div>
   );
 }
