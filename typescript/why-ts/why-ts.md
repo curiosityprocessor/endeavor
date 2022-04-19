@@ -1,7 +1,7 @@
 ## TypeScript enables *'types'* on objects
 #### Benefits
 1. know what kind of data is present in an object
-2. prevent errors, typos when accessing objects
+2. prevent errors & typos when accessing objects
 3. increased productivity with IDE-enabled content assists, auto-complete, etc
 
 #### vanilla js VS TypeScript: data processing example
