@@ -1,0 +1,17 @@
+{
+  "name": "express-testbed",
+  "version": "0.0.1",
+  "description": "testbed for node-express",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "curiosityprocessor",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
